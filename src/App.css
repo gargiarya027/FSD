@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.app {
+  text-align: center;
+}
+
+/* 🔹 Navbar Styling */
+.navbar {
+  background-color: #0f1111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+}
+
+/* 🔹 Amazon Logo */
+.amazon-logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+/* 🔹 Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.nav-links li:hover {
+  color: #ff9900;
+}
+
+/* 🔹 Page Content */
+.main-content {
+  margin-top: 50px;
+}
