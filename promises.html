@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        const printMessage = (msg) => {
+            console.log(msg);
+        };
+
+        const waitFun = (msg, time) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    printMessage(msg);
+                    resolve();
+                }, time);
+            });
+        };
+
+        const bookticket = async () => {
+            printMessage("welcome");
+            await waitFun("Login has been done successfully", 2000);
+            await waitFun("Seat has been chosen successfully", 3000);
+            await waitFun("Payment has been done successfully", 4000);
+            await waitFun("Ticket has been confirmed", 2000);
+            await waitFun("Thank you", 1000);
+        };
+
+        bookticket();
+    </script>
+</body>
+</html>
+```

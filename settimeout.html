@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="bookticket()">Click here to book ticket</button>
+    <div id="messages"></div>
+
+    <script>
+        function printMessage(msg) {
+            const container = document.getElementById("messages");
+            const p = document.createElement("p");
+            p.textContent = msg;
+            container.appendChild(p);
+        }
+
+        const bookticket = () => {
+            printMessage("welcome!");
+            setTimeout(() => {
+                printMessage("login has been done successfully");
+                setTimeout(() => {
+                    printMessage("seat has been chosen successfully");
+                    setTimeout(() => {
+                        printMessage("payment has been chosen successfully");
+                        setTimeout(() => {
+                            printMessage("ticket has been confirmed");
+                        
+                            printMessage("thank you!");
+                        }, 2000);
+                    }, 4000);
+                }, 3000);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
+
+

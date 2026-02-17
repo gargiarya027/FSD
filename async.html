@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <script>
+        const waitforsometime=(sec)=>{
+    setTimeout(() => {
+        console.log("inside timeout");
+    }, sec);
+}
+const async=()=>{
+    waitforsometime(5000);
+    console.log("wait has been completed")
+}
+console.log("before invokation of function");
+async();
+console.log("after invokation of function")
+    </script>
+</body>
+</html>
