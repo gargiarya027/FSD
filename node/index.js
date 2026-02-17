@@ -1,5 +1,5 @@
 //ASYNC CODE
-const fs=require('fs');
+//const fs=require('fs');
 //fs.writeFileSync("./ds-b.txt","Hello Everyone")
 //fs.writeFileSync("./abes.txt","Hi ABES College students")
  //const result=fs.readFileSync("./abes.txt","utf-8");
@@ -22,11 +22,19 @@ const fs=require('fs');
 //fs.unlinkSync("./ds-b.txt")
 //DELETE ASYNC
 
-fs.unlink("./abes.txt",(err)=>{
+/**fs.unlink("./abes.txt",(err)=>{
     if(err){
         console.log("Error",err);
     }
     else{
         console.log("Data Deleted");
     }
-});
+});**/
+const os=require('os');
+//console.log("system platform",os.platform());
+//console.log("user info",os.userInfo());
+//console.log("cpu architecture",os.arch());
+//console.log("free memory",os.freemem());
+//console.log("total memory",os.totalmem());
+//console.log("uptime",os.uptime());
+console.log("home directory",os.homedir());

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">LOGO</div>
+    <ul>
+      <li onclick="showHome()">Home</li>
+      <li onclick="showWork()">Work</li>
+    </ul>
+  </nav>
+
+  <!-- Content -->
+  <div id="content"></div>
+
+<script>
+
+function showHome() {
+  document.getElementById("content").innerHTML = `
+    <div class="home-container">
+      <img src="https://via.placeholder.com/300" />
+      <div class="text">
+        <h2>Abes Engineering College</h2>
+      </div>
+    </div>
+  `;
+}
+
+function showWork() {
+  document.getElementById("content").innerHTML = `
+    <div class="work-container">
+      <h2>Working with Node JS</h2>
+      <div class="buttons">
+        <button onclick="getData('total-memory')">Total Memory</button>
+        <button onclick="getData('free-memory')">Free Memory</button>
+        <button onclick="getData('user-info')">User Info</button>
+        <button onclick="getData('cpu-arch')">CPU Architecture</button>
+      </div>
+      <div id="result"></div>
+    </div>
+  `;
+}
+
+async function getData(endpoint) {
+  const res = await fetch(`/${endpoint}`);
+  const data = await res.json();
+  document.getElementById("result").innerHTML = `<h3>${data.value}</h3>`;
+}
+
+// Load home by default
+showHome();
+
+</script>
+</body>
+</html>
