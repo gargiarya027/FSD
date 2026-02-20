@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-bottom: 1px solid black;
+        }
+
+        .nav-links span {
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .nav-links span:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            display: none;
+            padding: 40px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .home-content img {
+            width: 300px;
+            height: auto;
+            border: 1px solid black;
+        }
+
+        .course-list {
+            font-size: 20px;
+            line-height: 2;
+        }
+
+        .login-form input {
+            display: block;
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 200px;
+            border: 1px solid black;
+            background: white;
+            color: black;
+        }
+
+        .login-form button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            border: 1px solid black;
+            background: white;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo"><b>LOGO</b></div>
+        <div class="nav-links">
+            <span onclick="showSection('home')">Home</span>
+            <span onclick="showSection('course')">Course</span>
+            <span onclick="showSection('login')">Login</span>
+        </div>
+    </div>
+
+    <div id="home" class="section active">
+        <div class="home-content">
+            <img src="https://via.placeholder.com/300" alt="College Image">
+            <h2>College Name</h2>
+        </div>
+    </div>
+
+    <div id="course" class="section">
+        <div class="course-list">
+            <p>BTech</p>
+            <p>MTech</p>
+            <p>PhD</p>
+        </div>
+    </div>
+
+    <div id="login" class="section">
+        <div class="login-form">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Class">
+            <button>Save</button>
+            <button>Exit</button>
+        </div>
+    </div>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
